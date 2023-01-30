@@ -1,0 +1,41 @@
+requete 1
+SELECT * from users
+requete 2
+SELECT * from users ORDER BY last_name
+requete 3
+SELECT * from users ORDER BY registration_date DESC LIMIT 1
+requete 4
+SELECT * from users where MONTH(birthdate) = MONTH(NOW()) 
+requete 5
+ SELECT count(*) from users
+requete 6
+
+SELECT users.first_name,users.last_name, addresses.city 
+FROM users JOIN addresses
+ON users.address_id = addresses.id
+
+requete 7
+SELECT users.first_name,users.last_name, addresses.number 
+FROM users JOIN addresses
+ON users.address_id = addresses.id
+WHERE addresses.number IS NULL
+
+requete 8
+SELECT id,name, price
+FROM products where price > 1000
+
+
+requete 9
+
+SELECT products.*, pictures.url, pictures.caption, pictures.id
+FROM products JOIN pictures 
+
+request 10
+
+SELECT  products.name, categories.title
+FROM products_categories 
+
+JOIN products ON products_categories.product_id = products.id
+JOIN categories ON products_categories.category_id = categories.id
+
+where categories.title="Voyage""
